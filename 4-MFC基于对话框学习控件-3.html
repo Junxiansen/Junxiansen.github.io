@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4-MFC基于对话框学习控件(3) | 易网盟</title>
+  <meta name="keywords" content=" MFC , MFC静态文本控件 ">
+  <meta name="description" content="4-MFC基于对话框学习控件(3) | 易网盟">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Hexo&#x2F;Hugo... + GitHub 免费仓库托管入门教程引导。用最简单的方案，办最实用的事，微软不倒，羊毛到老！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="易网盟">
+<meta property="og:url" content="https://junxiansen.cn/archives/index.html">
+<meta property="og:site_name" content="易网盟">
+<meta property="og:description" content="Hexo&#x2F;Hugo... + GitHub 免费仓库托管入门教程引导。用最简单的方案，办最实用的事，微软不倒，羊毛到老！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="test2">
+<meta property="article:tag" content="静态网站,hexo教程,搭建学术简历,免费建站,GitHub博客,免备案网站">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="易网盟" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>test2</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/Junxiansen"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:zwj13194280210@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1320796389&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(17)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="QT和MFC">
+                        
+                        QT和MFC
+                        <small>(7)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数据结构">
+                        
+                        数据结构
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="学编程">
+                        
+                        学编程
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="uCOS-III">
+                        
+                        uCOS-III
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="17">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>背景</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>创建任务</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>混技能</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>时钟节拍</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>栈</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>栈的原理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>字符集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Example</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MFC</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MFC编辑框控件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MFC窗口创建</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MFC静态文本控件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MFC消息映射</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Ubuntu桌面</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>uCOS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WinMain函数</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/hello-world.html"
+           data-tag="Example"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2099-09-09 09:09:09">2099/09/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 uCOS-III "
+           href="/3-%E6%97%B6%E9%92%9F%E8%8A%82%E6%8B%8D.html"
+           data-tag="时钟节拍"
+           data-author="" >
+            <span class="post-title" title="3-时钟节拍">3-时钟节拍</span>
+            <span class="post-date" title="2022-08-28 23:04:31">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 uCOS-III "
+           href="/2-%E5%88%9B%E5%BB%BALED%E7%81%AF%E4%BB%BB%E5%8A%A1.html"
+           data-tag="创建任务"
+           data-author="" >
+            <span class="post-title" title="2-创建LED灯任务">2-创建LED灯任务</span>
+            <span class="post-date" title="2022-08-28 21:07:16">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据结构 "
+           href="/1-2%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8-%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95.html"
+           data-tag="栈"
+           data-author="" >
+            <span class="post-title" title="1-2栈的应用_逆波兰表示法">1-2栈的应用_逆波兰表示法</span>
+            <span class="post-date" title="2022-08-26 15:29:29">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据结构 "
+           href="/1-1%E6%A0%88%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.html"
+           data-tag="栈的原理"
+           data-author="" >
+            <span class="post-title" title="1-1栈实现原理">1-1栈实现原理</span>
+            <span class="post-date" title="2022-08-26 15:28:42">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据结构 "
+           href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%83%8C%E6%99%AF.html"
+           data-tag="背景"
+           data-author="" >
+            <span class="post-title" title="数据结构背景">数据结构背景</span>
+            <span class="post-date" title="2022-08-26 15:27:48">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 uCOS-III "
+           href="/1-uCOS-III%E7%9A%84%E4%BD%BF%E7%94%A8%E4%B8%8E%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.html"
+           data-tag="uCOS"
+           data-author="" >
+            <span class="post-title" title="1-uCOS-III的使用与基本配置">1-uCOS-III的使用与基本配置</span>
+            <span class="post-date" title="2022-08-24 11:31:27">2022/08/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/Windows%E5%AD%97%E7%AC%A6%E9%9B%86.html"
+           data-tag="MFC,字符集"
+           data-author="" >
+            <span class="post-title" title="Windows字符集">Windows字符集</span>
+            <span class="post-date" title="2022-08-23 16:10:46">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3.html"
+           data-tag="MFC,MFC静态文本控件"
+           data-author="" >
+            <span class="post-title" title="4-MFC基于对话框学习控件(3)">4-MFC基于对话框学习控件(3)</span>
+            <span class="post-date" title="2022-08-23 16:02:33">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-2.html"
+           data-tag="MFC,MFC编辑框控件"
+           data-author="" >
+            <span class="post-title" title="4-MFC基于对话框学习控件(2)">4-MFC基于对话框学习控件(2)</span>
+            <span class="post-date" title="2022-08-15 16:38:22">2022/08/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-1.html"
+           data-tag="MFC,MFC静态文本控件"
+           data-author="" >
+            <span class="post-title" title="4-MFC基于对话框学习控件(1)">4-MFC基于对话框学习控件(1)</span>
+            <span class="post-date" title="2022-08-15 13:35:25">2022/08/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 Linux "
+           href="/1-Ubuntu%E6%A1%8C%E9%9D%A2%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C.html"
+           data-tag="Linux,Ubuntu桌面"
+           data-author="" >
+            <span class="post-title" title="1-Ubuntu桌面基础操作">1-Ubuntu桌面基础操作</span>
+            <span class="post-date" title="2022-08-11 22:22:50">2022/08/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/3-MFC%E6%B6%88%E6%81%AF%E6%98%A0%E5%B0%84.html"
+           data-tag="MFC,MFC消息映射"
+           data-author="" >
+            <span class="post-title" title="3-MFC消息映射">3-MFC消息映射</span>
+            <span class="post-date" title="2022-08-11 22:14:55">2022/08/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/2-MFC%E7%AA%97%E5%8F%A3%E5%88%9B%E5%BB%BA.html"
+           data-tag="MFC,MFC窗口创建"
+           data-author="" >
+            <span class="post-title" title="2-MFC窗口创建">2-MFC窗口创建</span>
+            <span class="post-date" title="2022-08-11 22:10:51">2022/08/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 QT和MFC "
+           href="/1-%E5%BA%95%E5%B1%82WinMain%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0.html"
+           data-tag="MFC,WinMain函数"
+           data-author="" >
+            <span class="post-title" title="1-底层WinMain入口函数">1-底层WinMain入口函数</span>
+            <span class="post-date" title="2022-08-11 21:57:20">2022/08/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 学编程 "
+           href="/markdown-advance-syntax.html"
+           data-tag="混技能"
+           data-author="" >
+            <span class="post-title" title="Markdown高级语法">Markdown高级语法</span>
+            <span class="post-date" title="2022-05-08 17:04:21">2022/05/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/academia-example.html"
+           data-tag="Example"
+           data-author="" >
+            <span class="post-title" title="学术简历样本">学术简历样本</span>
+            <span class="post-date" title="2022-02-22 02:02:02">2022/02/22</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-4-MFC基于对话框学习控件-3" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">4-MFC基于对话框学习控件(3)</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="QT和MFC">QT和MFC</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">MFC</a>
+            
+            <a class="color5">MFC静态文本控件</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-08-23 16:16:25'>2022-08-23 16:02</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E6%8B%89%E6%A1%86%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="toc-text">下拉框控件使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">列表控件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">树控件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%A1%B5%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">标签页的使用</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下拉框控件使用"><a href="#下拉框控件使用" class="headerlink" title="下拉框控件使用"></a>下拉框控件使用</h2><ul>
+<li><p>下拉框控件名称为Combo Box，属性中添加数据通过分号隔开，默认情况下Combo Box类型是可以编辑的，需要设置为DropList（下拉列表）不可编辑。</p>
+</li>
+<li><p>如果行为栏中Sort（排序选项），True时会将数据从字符A-Z排序，False时会根据你填写的数据来排序，一般选择False。</p>
+</li>
+<li><p>添加数据使用<code>AddString()</code>函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加下拉选项</span></span><br><span class="line">m_cbx.<span class="built_in">AddString</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;唐僧&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3/%E6%B7%BB%E5%8A%A0%E4%B8%8B%E6%8B%89%E9%80%89%E9%A1%B9-16612421396878.jpg" alt="添加下拉选项"></p>
+</li>
+<li><p>插入数据使用<code>InserString()</code>函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入下拉选项</span></span><br><span class="line">m_cbx.<span class="built_in">InsertString</span>(<span class="number">4</span>, <span class="built_in">TEXT</span>(<span class="string">&quot;白龙马&quot;</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据使用<code>DeleteString(</code>)函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除下拉选项</span></span><br><span class="line">m_cbx.<span class="built_in">DeleteString</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置默认选项使用<code>SetCurSel()</code>函数，大致意思为Set Current Select</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置默认选项</span></span><br><span class="line">m_cbx.<span class="built_in">SetCurSel</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加OnCbnSelchangeCombo选择变化的控件事件，其中<code>GetCurSel()</code>函数可以获取当前的索引，返回一个int型整数，<code>getLBText(int index, CString str)</code>函数根据索引值获取内容。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CcomboBoxContrlDlg::OnCbnSelchangeCombo2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  	<span class="comment">// <span class="doctag">TODO:</span> 在此添加控件通知处理程序代码</span></span><br><span class="line">  	<span class="type">int</span> index = m_cbx.<span class="built_in">GetCurSel</span>();</span><br><span class="line">  	CString str;</span><br><span class="line">  	m_cbx.<span class="built_in">GetLBText</span>(index,str);</span><br><span class="line">  	<span class="built_in">MessageBox</span>(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3/%E6%B7%BB%E5%8A%A0%E4%B8%8B%E6%8B%89%E9%80%89%E9%A1%B9-16612421396878.jpg" alt="添加下拉选项-16612421396878"></p>
+</li>
+</ul>
+<h2 id="列表控件的使用"><a href="#列表控件的使用" class="headerlink" title="列表控件的使用"></a>列表控件的使用</h2><ul>
+<li><p>列表控件名称为List Control，属性中在View(视图)选择report模式（报表模式）。</p>
+</li>
+<li><p>添加表头函数为InsertColumn(),其中4个参数依次分别是：索引、内容、对齐方式、列宽度</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CString str[] = &#123;<span class="built_in">TEXT</span>(<span class="string">&quot;姓名&quot;</span>),<span class="built_in">TEXT</span>(<span class="string">&quot;性别&quot;</span>),<span class="built_in">TEXT</span>(<span class="string">&quot;年龄&quot;</span>) &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i &lt; <span class="number">3</span>; i++) </span><br><span class="line">&#123;</span><br><span class="line">	m_list.<span class="built_in">InsertColumn</span>(i, str[i], LVCFMT_LEFT,<span class="number">100</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置正文，从0开始索引，先插入一项，再设置该项的值。其中SetItemText(行，列，具体内容)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置正文</span></span><br><span class="line">m_list.<span class="built_in">InsertItem</span>(<span class="number">0</span>, <span class="built_in">TEXT</span>(<span class="string">&quot;张三&quot;</span>));</span><br><span class="line">m_list.<span class="built_in">SetItemText</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="built_in">TEXT</span>(<span class="string">&quot;男&quot;</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置列表如图所示：</p>
+<p><img src="/../images/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3/%E8%AE%BE%E7%BD%AE%E5%88%97%E8%A1%A8.png" alt="设置列表"></p>
+<p>代码可以写为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> j;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) </span><br><span class="line">&#123;</span><br><span class="line">	j = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	CString name;</span><br><span class="line">	name.<span class="built_in">Format</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;张三_%d&quot;</span>), i);</span><br><span class="line">	m_list.<span class="built_in">InsertItem</span>(i, name);</span><br><span class="line"></span><br><span class="line">	m_list.<span class="built_in">SetItemText</span>(i, ++j, <span class="built_in">TEXT</span>(<span class="string">&quot;男&quot;</span>));</span><br><span class="line">	m_list.<span class="built_in">SetItemText</span>(i, ++j, <span class="built_in">TEXT</span>(<span class="string">&quot;23&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置列表属性和整行选中状态，在列表背景下显示网格</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m_list.<span class="built_in">SetExtendedStyle</span>(m_list.<span class="built_in">GetExtendedStyle</span>() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="树控件的使用"><a href="#树控件的使用" class="headerlink" title="树控件的使用"></a>树控件的使用</h2><p>在属性栏中Has Lines（具有线）让树控件有线连接。Has Buttons（具有按钮）让树控件有按钮进行折叠，展开。</p>
+<p>Lines At Root（行在根处）根节点与根节点有线连接。</p>
+<ul>
+<li><p>1设置图标列表集合</p>
+<p>SetImageList()</p>
+<p>CImageList list; 需要&#x3D;&#x3D;把图片集合变量添加到头文件&#x3D;&#x3D;定义为全局变量</p>
+</li>
+<li><p>2在资源视图ICON中添加资源，导入ICON图片文件</p>
+<p>创建图片集合list.Create(cx,cy,nFlags,nInitial,nGrow)</p>
+<p>添加具体的图片list.Add(HICON hicon),参数类型为ICON类型</p>
+<p>创建HICON图标HICON icons[4]</p>
+<p>icon[0] &#x3D; AfxGetApp()-&gt;LoadIconW(nID),nID为图片的ID号</p>
+</li>
+<li><p>通过循环将4个图片添加到list里面</p>
+<p>for(int i &#x3D;0;i&lt;4;i++)</p>
+<p>{</p>
+<p>​     list.Add(icons[i]);</p>
+<p>}</p>
+</li>
+<li><p>将添加好的list写入SetImageList()参数中</p>
+</li>
+<li><p>设置节点使用InserItem()，该函数返回值是HTREEITEM</p>
+</li>
+<li><p>必须保存图片的集合，所以要定义CImageList list定义在.h文件中做成员的属性</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 在此添加额外的初始化代码</span></span><br><span class="line"></span><br><span class="line">HICON icons[<span class="number">4</span>];</span><br><span class="line">icons[<span class="number">0</span>] = <span class="built_in">AfxGetApp</span>()-&gt;<span class="built_in">LoadIconW</span>(IDI_ICON1);</span><br><span class="line">icons[<span class="number">1</span>] = <span class="built_in">AfxGetApp</span>()-&gt;<span class="built_in">LoadIconW</span>(IDI_ICON2);</span><br><span class="line">icons[<span class="number">2</span>] = <span class="built_in">AfxGetApp</span>()-&gt;<span class="built_in">LoadIconW</span>(IDI_ICON3);</span><br><span class="line">icons[<span class="number">3</span>] = <span class="built_in">AfxGetApp</span>()-&gt;<span class="built_in">LoadIconW</span>(IDI_ICON4);</span><br><span class="line"></span><br><span class="line">list.<span class="built_in">Create</span>(<span class="number">30</span>, <span class="number">30</span>, ILC_COLOR32, <span class="number">4</span>, <span class="number">4</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i =<span class="number">0</span>;i&lt;<span class="number">4</span>;i++) </span><br><span class="line">&#123;</span><br><span class="line">	list.<span class="built_in">Add</span>(icons[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">m_tree.<span class="built_in">SetImageList</span>(&amp;list, TVSIL_NORMAL);</span><br><span class="line"></span><br><span class="line">HTREEITEM root = m_tree.<span class="built_in">InsertItem</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;根节点&quot;</span>), <span class="number">0</span>, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">HTREEITEM parent = m_tree.<span class="built_in">InsertItem</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;父节点&quot;</span>), <span class="number">1</span>, <span class="number">1</span>, root);</span><br><span class="line">HTREEITEM sub1 = m_tree.<span class="built_in">InsertItem</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;子节点1&quot;</span>), <span class="number">2</span>, <span class="number">2</span>, parent);</span><br><span class="line">HTREEITEM sub2 = m_tree.<span class="built_in">InsertItem</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;子节点2&quot;</span>), <span class="number">3</span>, <span class="number">3</span>, parent);</span><br><span class="line"></span><br><span class="line">m_tree.<span class="built_in">SelectItem</span>(parent);</span><br></pre></td></tr></table></figure>
+
+<p>其他api介绍：</p>
+<p>1）SelectItem(HTREEITEM I);默认选择一个节点。</p>
+<p>2）节点与节点切换时需要TVN_SELCHANGED控件事件</p>
+<p>​		GetSelectedItem()返回一个HTREITEM类型变量</p>
+<p>​        GetItemText(HTREEITEM)参数类型为HTREEITEM，返回值时CString类型</p>
+<p>选择变化的节点代码可以这么写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CTreeContrlDlg::OnTvnSelchangedTree1</span><span class="params">(NMHDR* pNMHDR, LRESULT* pResult)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LPNMTREEVIEW pNMTreeView = <span class="built_in">reinterpret_cast</span>&lt;LPNMTREEVIEW&gt;(pNMHDR);</span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span> 在此添加控件通知处理程序代码</span></span><br><span class="line">	*pResult = <span class="number">0</span>;</span><br><span class="line">	HTREEITEM item;</span><br><span class="line">	item = m_tree.<span class="built_in">GetSelectedItem</span>();</span><br><span class="line">	CString str = m_tree.<span class="built_in">GetItemText</span>(item);</span><br><span class="line">	<span class="built_in">MessageBox</span>(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>树控件学习运行如图：</p>
+<p><img src="/../images/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3/%E6%98%BE%E7%A4%BA%E7%BB%93%E6%9E%9C.jpg" alt="显示结果"></p>
+<h2 id="标签页的使用"><a href="#标签页的使用" class="headerlink" title="标签页的使用"></a>标签页的使用</h2><p>标签页控件叫做Tab Control，首先在项目中引用TabSheet.cpp和TabSheet.h文件。</p>
+<ul>
+<li>TabSheet.h代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">if</span> !defined(AFX_TABSHEET_H__42EE262D_D15F_46D5_8F26_28FD049E99F4__INCLUDED_)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> AFX_TABSHEET_H__42EE262D_D15F_46D5_8F26_28FD049E99F4__INCLUDED_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> _MSC_VER &gt; 1000</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// _MSC_VER &gt; 1000</span></span></span><br><span class="line"><span class="comment">// TabSheet.h : header file</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// CTabSheet window</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXPAGE 16</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CTabSheet</span> : <span class="keyword">public</span> CTabCtrl</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// Construction</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">CTabSheet</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Attributes</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Operations</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Overrides</span></span><br><span class="line">	<span class="comment">// ClassWizard generated virtual function overrides</span></span><br><span class="line">	<span class="comment">//&#123;&#123;AFX_VIRTUAL(CTabSheet)</span></span><br><span class="line">	<span class="comment">//&#125;&#125;AFX_VIRTUAL</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Implementation</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">GetCurSel</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">SetCurSel</span><span class="params">(<span class="type">int</span> nItem)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Show</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">SetRect</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function">BOOL <span class="title">AddPage</span><span class="params">(LPCTSTR title, CDialog *pDialog, UINT ID)</span></span>;</span><br><span class="line">	<span class="keyword">virtual</span> ~<span class="built_in">CTabSheet</span>();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Generated message map functions</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	LPCTSTR m_Title[MAXPAGE];</span><br><span class="line">	UINT m_IDD[MAXPAGE];</span><br><span class="line">	CDialog* m_pPages[MAXPAGE];</span><br><span class="line">	<span class="type">int</span> m_nNumOfPages;</span><br><span class="line">	<span class="type">int</span> m_nCurrentPage;</span><br><span class="line">	<span class="comment">//&#123;&#123;AFX_MSG(CTabSheet)</span></span><br><span class="line">	<span class="function">afx_msg <span class="type">void</span> <span class="title">OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span></span>;</span><br><span class="line">	<span class="function">afx_msg <span class="type">void</span> <span class="title">OnHScroll</span><span class="params">(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)</span></span>;</span><br><span class="line">	<span class="comment">//&#125;&#125;AFX_MSG</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">DECLARE_MESSAGE_MAP</span>()</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//&#123;&#123;AFX_INSERT_LOCATION&#125;&#125;</span></span><br><span class="line"><span class="comment">// Microsoft Visual C++ will insert additional declarations immediately before the previous line.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// !defined(AFX_TABSHEET_H__42EE262D_D15F_46D5_8F26_28FD049E99F4__INCLUDED_)</span></span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>TabSheet.cpp代码如下：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TabSheet.cpp : implementation file</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;afxdialogex.h&quot;</span></span></span><br><span class="line"><span class="comment">//#include &quot;Property5.h&quot;</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;TabSheet.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> _DEBUG</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> new DEBUG_NEW</span></span><br><span class="line"><span class="meta">#<span class="keyword">undef</span> THIS_FILE</span></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> THIS_FILE[] = __FILE__;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// CTabSheet</span></span><br><span class="line"></span><br><span class="line">CTabSheet::<span class="built_in">CTabSheet</span>()</span><br><span class="line">&#123;</span><br><span class="line">	m_nNumOfPages = <span class="number">0</span>;</span><br><span class="line">	m_nCurrentPage = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CTabSheet::~<span class="built_in">CTabSheet</span>()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">BEGIN_MESSAGE_MAP</span>(CTabSheet, CTabCtrl)</span><br><span class="line">	<span class="comment">//&#123;&#123;AFX_MSG_MAP(CTabSheet)</span></span><br><span class="line">	<span class="built_in">ON_WM_LBUTTONDOWN</span>()</span><br><span class="line">	<span class="built_in">ON_WM_HSCROLL</span>()</span><br><span class="line">	<span class="comment">//&#125;&#125;AFX_MSG_MAP</span></span><br><span class="line"><span class="built_in">END_MESSAGE_MAP</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// CTabSheet message handlers</span></span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">CTabSheet::AddPage</span><span class="params">(LPCTSTR title, CDialog *pDialog,UINT ID)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( MAXPAGE == m_nNumOfPages )</span><br><span class="line">		<span class="keyword">return</span> FALSE;</span><br><span class="line"></span><br><span class="line">	m_nNumOfPages++;</span><br><span class="line">	</span><br><span class="line">	m_pPages[m_nNumOfPages<span class="number">-1</span>] = pDialog;</span><br><span class="line">	m_IDD[m_nNumOfPages<span class="number">-1</span>] = ID;</span><br><span class="line">	m_Title[m_nNumOfPages<span class="number">-1</span>] = title;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> TRUE;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CTabSheet::SetRect</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	CRect tabRect, itemRect;</span><br><span class="line">	<span class="type">int</span> nX, nY, nXc, nYc;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">GetClientRect</span>(&amp;tabRect);</span><br><span class="line">	<span class="built_in">GetItemRect</span>(<span class="number">0</span>, &amp;itemRect);</span><br><span class="line">	</span><br><span class="line">	nX=itemRect.left;</span><br><span class="line">	nY=itemRect.bottom+<span class="number">1</span>;</span><br><span class="line">	nXc=tabRect.right-itemRect.left<span class="number">-2</span>;</span><br><span class="line">	nYc=tabRect.bottom-nY<span class="number">-2</span>;</span><br><span class="line">	</span><br><span class="line">	m_pPages[<span class="number">0</span>]-&gt;<span class="built_in">SetWindowPos</span>(&amp;wndTop, nX, nY, nXc, nYc, SWP_SHOWWINDOW);</span><br><span class="line">	<span class="keyword">for</span>( <span class="type">int</span> nCount=<span class="number">1</span>; nCount &lt; m_nNumOfPages; nCount++ )</span><br><span class="line">		m_pPages[nCount]-&gt;<span class="built_in">SetWindowPos</span>(&amp;wndTop, nX, nY, nXc, nYc, SWP_HIDEWINDOW);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CTabSheet::Show</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>( i=<span class="number">0</span>; i &lt; m_nNumOfPages; i++ )</span><br><span class="line">	&#123;</span><br><span class="line">		m_pPages[i]-&gt;<span class="built_in">Create</span>( m_IDD[i], <span class="keyword">this</span> );</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">AfxGetMainWnd</span>())</span><br><span class="line">			<span class="built_in">InsertItem</span>( i, m_Title[i] );</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	m_pPages[<span class="number">0</span>]-&gt;<span class="built_in">ShowWindow</span>(SW_SHOW);</span><br><span class="line">	<span class="keyword">for</span>( i=<span class="number">1</span>; i &lt; m_nNumOfPages; i++)</span><br><span class="line">		m_pPages[i]-&gt;<span class="built_in">ShowWindow</span>(SW_HIDE);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">SetRect</span>();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CTabSheet::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	CTabCtrl::<span class="built_in">OnLButtonDown</span>(nFlags, point);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(m_nCurrentPage != <span class="built_in">GetCurFocus</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		m_pPages[m_nCurrentPage]-&gt;<span class="built_in">ShowWindow</span>(SW_HIDE);</span><br><span class="line">		m_nCurrentPage=<span class="built_in">GetCurFocus</span>();</span><br><span class="line">		m_pPages[m_nCurrentPage]-&gt;<span class="built_in">ShowWindow</span>(SW_SHOW);</span><br><span class="line"></span><br><span class="line"><span class="comment">//		m_pPages[m_nCurrentPage]-&gt;SetFocus();</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//AfxMessageBox(&quot;бЁжа&quot;); wbm test</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CTabSheet::SetCurSel</span><span class="params">(<span class="type">int</span> nItem)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( nItem &lt; <span class="number">0</span> || nItem &gt;= m_nNumOfPages)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> ret = m_nCurrentPage;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(m_nCurrentPage != nItem )</span><br><span class="line">	&#123;</span><br><span class="line">		m_pPages[m_nCurrentPage]-&gt;<span class="built_in">ShowWindow</span>(SW_HIDE);</span><br><span class="line">		m_nCurrentPage = nItem;</span><br><span class="line">		m_pPages[m_nCurrentPage]-&gt;<span class="built_in">ShowWindow</span>(SW_SHOW);</span><br><span class="line"></span><br><span class="line"><span class="comment">//		m_pPages[m_nCurrentPage]-&gt;SetFocus();</span></span><br><span class="line">		CTabCtrl::<span class="built_in">SetCurSel</span>(nItem);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">CTabSheet::GetCurSel</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> CTabCtrl::<span class="built_in">GetCurSel</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CTabSheet::OnHScroll</span><span class="params">(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span> Add your message handler code here and/or call default</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	CTabCtrl::<span class="built_in">OnHScroll</span>(nSBCode, nPos, pScrollBar);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Tab Control右键添加变量，变量名称为m_tab，类型为CTabSheet（&#x3D;&#x3D;一点要修改其变量类型&#x3D;&#x3D;）</p>
+</li>
+<li><p>创建两个标签页，在资源视图Dialog选项中右键插入Dialog，更改其属性，边框（Border）选择None，样式（Style）选择Child。</p>
+</li>
+</ul>
+<p><img src="/../images/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3/%E6%9B%B4%E6%94%B9%E5%90%8E%E7%9A%84%E6%A0%87%E7%AD%BE%E9%A1%B5-16612420985674.jpg" alt="更改后的标签页"></p>
+<ul>
+<li><p>在标签页中添加类，对应Qt中一个ui对应一个.h和一个.cpp文件</p>
+</li>
+<li><p>在主窗口中添加标签。AddPage（）方法中第一参数为标题，第二个参数为具体添加的标签页，第三个参数为该标签页对应的ID号</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m_tab.<span class="built_in">AddPage</span>(<span class="built_in">TEXT</span>(<span class="string">&quot;页面2&quot;</span>), &amp;dlg2, IDD_DIALOG2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后一步调用show（）方法来让添加的标签显示出来。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示</span></span><br><span class="line">m_tab.<span class="built_in">Show</span>();</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/4-MFC%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%AD%A6%E4%B9%A0%E6%8E%A7%E4%BB%B6-3/%E6%A0%87%E7%AD%BE%E9%A1%B5%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-16612421103876.jpg" alt="标签页运行结果"></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 zwj13194280210@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
